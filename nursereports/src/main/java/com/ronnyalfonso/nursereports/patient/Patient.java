@@ -1,9 +1,15 @@
-package com.ronnyalfonso.patient;
+package com.ronnyalfonso.nursereports.patient;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.ronnyalfonso.nursereports.assistanttype.AssistantType;
+
+@Entity
 public class Patient {
 	
-	
-	private Integer id;
+	@Id
+	private Long id;
 	private String firstName;
 	private String middleName;
 	private String lastName;
@@ -15,23 +21,26 @@ public class Patient {
 	private Integer minSystolic;
 	private Integer maxBloodSugarLevel;
 	private Integer minBloodSugarLevel;
+	private Float maxTemperature;
+	private Float minTemperature;
 	private Integer maxPulse;
 	private Integer minPulse;
-	private Integer maxTemperature;
-	private Integer minTemperature;
 	private Integer maxRespiration;
 	private Integer minRespiration;
-	private Boolean active;
-	private Boolean deleted;
+	private Boolean isActive;
+	private Boolean isDeleted;
+	private Boolean paid;
+
+	// TODO fix with classes
+	private User user;
+	private AssistantType assistantType;
 	
-	private Integer user;
-	private Integer assistantType;
+
 	
-	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {
@@ -100,16 +109,16 @@ public class Patient {
 	public void setMinPulse(Integer minPulse) {
 		this.minPulse = minPulse;
 	}
-	public Integer getMaxTemperature() {
+	public Float getMaxTemperature() {
 		return maxTemperature;
 	}
-	public void setMaxTemperature(Integer maxTemperature) {
+	public void setMaxTemperature(Float maxTemperature) {
 		this.maxTemperature = maxTemperature;
 	}
-	public Integer getMinTemperature() {
+	public Float getMinTemperature() {
 		return minTemperature;
 	}
-	public void setMinTemperature(Integer minTemperature) {
+	public void setMinTemperature(Float minTemperature) {
 		this.minTemperature = minTemperature;
 	}
 	public Integer getMaxRespiration() {
@@ -124,17 +133,17 @@ public class Patient {
 	public void setMinRespiration(Integer minRespiration) {
 		this.minRespiration = minRespiration;
 	}
-	public Boolean getActive() {
-		return active;
+	public Boolean getIsActive() {
+		return isActive;
 	}
-	public void setActive(Boolean active) {
-		this.active = active;
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
-	public Boolean getDeleted() {
-		return deleted;
+	public Boolean getIsDeleted() {
+		return isDeleted;
 	}
-	public void setDeleted(Boolean deleted) {
-		this.deleted = deleted;
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 	public Integer getUser() {
 		return user;
@@ -142,14 +151,18 @@ public class Patient {
 	public void setUser(Integer user) {
 		this.user = user;
 	}
-	public Integer getAssistantType() {
+	public AssistantType getAssistantType() {
 		return assistantType;
 	}
-	public void setAssistantType(Integer assistantType) {
+	public void setAssistantType(AssistantType assistantType) {
 		this.assistantType = assistantType;
 	}
-	
-	
-	
+	public Boolean getPaid() {
+		return paid;
+	}
+	public void setPaid(Boolean paid) {
+		this.paid = paid;
+	}
+
 	
 }
